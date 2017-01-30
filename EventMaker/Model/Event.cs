@@ -17,7 +17,7 @@ namespace EventMaker.Model
 
         public Event()
         {
-            ToString();
+            
         }
     }
 

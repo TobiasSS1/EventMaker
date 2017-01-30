@@ -12,6 +12,7 @@ namespace EventMaker.Model
         private static EventCatalogSingleton instance;
 
         private EventCatalogSingleton() { }
+        public List<Event> EventListe = new List<Event>();
 
         public static EventCatalogSingleton Instance
         {
@@ -25,13 +26,10 @@ namespace EventMaker.Model
             }
         }
 
-
-        
-
-
-        public void addMetode()
+        public void addMetode( )
         {
-
+            EventListe.Add(1, "test", "test", "test", 1-14-2016);
+            
         }
     }
 }
