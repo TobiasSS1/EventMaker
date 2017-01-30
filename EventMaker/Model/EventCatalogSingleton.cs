@@ -12,7 +12,7 @@ namespace EventMaker.Model
         private static EventCatalogSingleton instance;
 
         private EventCatalogSingleton() {
-            EventListe.Add(new Event(1, "test", "test", "test", 1-1-1111));
+            EventListe.Add(new Event(1, "test", "test", "test", DateTime.Now));
         }
         public List<Event> EventListe = new List<Event>();
 

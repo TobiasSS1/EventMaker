@@ -8,6 +8,6 @@ namespace EventMaker.ViewModel
 {
     class EventViewModel
     {
-        
+        public Model.EventCatalogSingleton ECS { get; set; }
     }
 }
