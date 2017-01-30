@@ -19,6 +19,14 @@ namespace EventMaker.Model
         {
             
         }
+        public Event(int Id, string Name, string Description, string Place, DateTime DateTime)
+        {
+            this.Id = Id;
+            this.Name = Name;
+            this.Description = Description;
+            this.Place = Place;
+            this.DateTime = DateTime;
+        }
     }
 
 
