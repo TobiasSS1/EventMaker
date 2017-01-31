@@ -21,8 +21,8 @@ namespace EventMaker.Handler
 
         public void CreateEvent()
         {
-            
-            EVM = new Event(EVM.Id, EVM.Navn, EVM.Description, EVM.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EVM.Date, EVM.Time));
+            Event myevent = new Event(EVM.Id, EVM.Navn, EVM.Description, EVM.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EVM.Date, EVM.Time));
+            myevent = new Event();
         }
     }
 }
