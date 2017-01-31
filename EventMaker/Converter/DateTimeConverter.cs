@@ -10,9 +10,9 @@ namespace EventMaker.Converter
     {
 
 
-        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date, TimeSpan time)
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset Date, TimeSpan Time)
         {
-            return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0);
+            return new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, 0);
         }
     }
     

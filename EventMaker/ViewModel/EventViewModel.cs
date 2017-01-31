@@ -9,12 +9,12 @@ namespace EventMaker.ViewModel
     class EventViewModel
     {
         public Model.EventCatalogSingleton ECS { get; set; }
-        int Id { get; set; }
-        string Navn { get; set; }
-        string Description { get; set; }
-        string Place { get; set; }
-        DateTimeOffset Date { get; set; }
-        TimeSpan Time { get; set; }
+        public int Id { get; set; }
+        public string Navn { get; set; }
+        public string Description { get; set; }
+        public string Place { get; set; }
+        public DateTimeOffset Date { get; set; }
+        public TimeSpan Time { get; set; }
 
         public EventViewModel()
         {
