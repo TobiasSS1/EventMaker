@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using EventMaker.Common;
+using EventMaker.Model;
+using EventMaker.Handler;
 
 namespace EventMaker.ViewModel
 {
@@ -16,16 +19,27 @@ namespace EventMaker.ViewModel
         public string Place { get; set; }
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
+        /*public RelayCommand ICommand { get; private set; }  */
         public ICommand CreateEventCommander { get; set; }
-
+        public EventCatalogSingleton minSingle { get; set;}
+        public Handler.EventHandler minHandler { get; set; }
 
         
-        public EventViewModel(ICommand createeventcommander)
+        public EventViewModel(ICommand createeventcommander, EventCatalogSingleton minsingle, Handler.EventHandler minhandler)
         {
+
+            CreateEventCommander = new RelayCommand(minhandler.CreateEvent);
+            this.minHandler = minhandler;
+            this.minSingle = minsingle; 
             this.CreateEventCommander = createeventcommander;
             DateTime dt = System.DateTime.Now;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+        }
+
+        public void CreateEventtest()
+        {
+           
         }
     }
 }

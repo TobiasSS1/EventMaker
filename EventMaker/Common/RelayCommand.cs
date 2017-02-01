@@ -9,8 +9,10 @@ namespace EventMaker.Common
 {
     class RelayCommand : ICommand
     {
+        private readonly Func<bool> _canExecute;
         public event EventHandler CanExecuteChanged;
-        private readonly Action execute;
+        private readonly Action _execution;
+
 
         public bool CanExecute(object parameter)
         {
@@ -19,12 +21,12 @@ namespace EventMaker.Common
 
         public void Execute(object parameter)
         {
-            execute();
+            _execution();
         }
 
-        public RelayCommand(Action execute)
+        public RelayCommand(Action _execution)
         {
-            this.execute = execute;
+            this._execution = _execution;
         }
     }
 }

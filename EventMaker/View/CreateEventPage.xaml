@@ -14,5 +14,6 @@
         <TimePicker HorizontalAlignment="Left" Margin="28,329,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="28,181,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="28,481,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
