@@ -1,11 +1,17 @@
 ﻿<Page
-    x:Class="EventMaker.View.CreateEventPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:EventMaker.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:EventMaker.ViewModel"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="EventMaker.View.CreateEventPage"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:EventViewModel/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="28,255,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
@@ -14,6 +20,13 @@
         <TimePicker HorizontalAlignment="Left" Margin="28,329,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="28,181,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="28,481,0,0" VerticalAlignment="Top"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="28,481,0,0" VerticalAlignment="Top" Command="{Binding CreateEventCommander}" />
+        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Right" Icon="Accept" Label="appbarbutton" Margin="0,0,78,69" VerticalAlignment="Bottom" d:LayoutOverrides="Width">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="EventMaker.View.EventPage"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </AppBarButton>
     </Grid>
 </Page>

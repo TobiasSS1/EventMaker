@@ -25,21 +25,16 @@ namespace EventMaker.ViewModel
         public Handler.EventHandler minHandler { get; set; }
 
         
-        public EventViewModel(ICommand createeventcommander, EventCatalogSingleton minsingle, Handler.EventHandler minhandler)
+        public EventViewModel()
         {
-
-            CreateEventCommander = new RelayCommand(minhandler.CreateEvent);
-            this.minHandler = minhandler;
-            this.minSingle = minsingle; 
-            this.CreateEventCommander = createeventcommander;
+            minHandler = new Handler.EventHandler(this);
+            CreateEventCommander = new RelayCommand(minHandler.CreateEvent);
+            //this.minHandler = minhandler;
+            //this.minSingle = minsingle; 
+            //this.CreateEventCommander = createeventcommander;
             DateTime dt = System.DateTime.Now;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-        }
-
-        public void CreateEventtest()
-        {
-           
         }
     }
 }
