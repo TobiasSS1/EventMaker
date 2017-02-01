@@ -28,11 +28,9 @@ namespace EventMaker.Model
             }
         }
 
-        public void addMetode( )
+        public void addMetode(Event Indhold)
         {
-            
-            
-            
+            EventListe.Add(Indhold);
         }
     }
 }

@@ -13,7 +13,13 @@
         <Grid.DataContext>
             <ViewModel:EventViewModel/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="100" Margin="70,113,0,0" VerticalAlignment="Top" Width="100" DataContext="{Binding ECS, Mode=TwoWay}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="100" Margin="70,113,0,0" VerticalAlignment="Top" Width="100" DataContext="{Binding ECS, Mode=TwoWay}">
+            <DataTemplate>
+                <Border Name="border" BorderBrush="Red" BorderThickness="3" Padding="7" Margin="3">
+                    
+                </Border>
+            </DataTemplate>
+        </ListView>
 
     </Grid>
 </Page>

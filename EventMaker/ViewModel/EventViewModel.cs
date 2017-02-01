@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace EventMaker.ViewModel
 {
@@ -15,13 +16,16 @@ namespace EventMaker.ViewModel
         public string Place { get; set; }
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
+        public ICommand CreateEventCommander { get; set; }
 
-        public EventViewModel()
+
+        
+        public EventViewModel(ICommand createeventcommander)
         {
+            this.CreateEventCommander = createeventcommander;
             DateTime dt = System.DateTime.Now;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
-
     }
 }
